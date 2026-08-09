@@ -47,11 +47,36 @@ export default function Contact() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const mailtoLink = `mailto:mudiyalasanith2006@gmail.com?subject=Portfolio Inquiry from ${formState.name}&body=${encodeURIComponent(formState.message)}`;
-    window.open(mailtoLink, "_blank");
-  };
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formState),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || "Failed to send message.");
+    }
+
+    alert("Message sent successfully!");
+
+    setFormState({
+      name: "",
+      email: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error("Contact form error:", error);
+    alert("Something went wrong. Please try again.");
+  }
+};
 
   return (
     <section
