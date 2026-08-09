@@ -46,13 +46,10 @@ export const ScrollExpand: React.FC<ScrollExpandProps> = ({
   startRadius = 24,
   endRadius = 0,
   mediaZoom = 1.35,
-
-  // IMPORTANT:
-  // Much longer expansion on mobile.
-scrollDistance = 1.2,
-holdDistance = 0.35,
-smoothing = 0.06,
-overlayScrim = 0.45,
+  scrollDistance = 1.2,
+  holdDistance = 0.35,
+  smoothing = 0.1,
+  overlayScrim = 0.45,
   useWindowScroll = false,
   enabled = true,
   children,
@@ -72,7 +69,19 @@ overlayScrim = 0.45,
   const scrimRef = useRef<HTMLDivElement>(null);
   const hintRef = useRef<HTMLDivElement>(null);
 
-  const propsRef = useRef<Record<string, any>>({});
+  const propsRef = useRef({
+    startWidth,
+    startHeight,
+    startRadius,
+    endRadius,
+    mediaZoom,
+    scrollDistance,
+    holdDistance,
+    smoothing,
+    overlayScrim,
+    useWindowScroll,
+    enabled,
+  });
 
   propsRef.current = {
     startWidth,
@@ -97,50 +106,43 @@ overlayScrim = 0.45,
     const c = propsRef.current;
 
     /*
-     * --------------------------------------------------
      * FRAME EXPANSION
-     * --------------------------------------------------
      */
 
     const expand = smoothstep(0, 1, p);
 
-    const w =
-      c.startWidth +
-      (100 - c.startWidth) * expand;
+    const width =
+      c.startWidth + (100 - c.startWidth) * expand;
 
-    const h =
-      c.startHeight +
-      (100 - c.startHeight) * expand;
+    const height =
+      c.startHeight + (100 - c.startHeight) * expand;
 
-    const ix = Math.max(0, (100 - w) / 2);
-    const iy = Math.max(0, (100 - h) / 2);
+    const insetX = Math.max(0, (100 - width) / 2);
+    const insetY = Math.max(0, (100 - height) / 2);
 
     const radius =
       c.startRadius +
       (c.endRadius - c.startRadius) * expand;
 
     frame.style.clipPath =
-      `inset(${iy}% ${ix}% ${iy}% ${ix}% round ${radius}px)`;
+      `inset(${insetY}% ${insetX}% ${insetY}% ${insetX}% round ${radius}px)`;
 
     /*
-     * --------------------------------------------------
      * MEDIA
-     * --------------------------------------------------
      */
 
-    media.style.transform =
-      `scale(${c.mediaZoom + (1 - c.mediaZoom) * expand})`;
+    const mediaScale =
+      c.mediaZoom + (1 - c.mediaZoom) * expand;
+
+    media.style.transform = `scale(${mediaScale})`;
 
     const blurAmount =
       12 * (1 - smoothstep(0, 0.55, p));
 
-    media.style.filter =
-      `blur(${blurAmount}px)`;
+    media.style.filter = `blur(${blurAmount}px)`;
 
     /*
-     * --------------------------------------------------
      * SCRIM
-     * --------------------------------------------------
      */
 
     if (scrimRef.current) {
@@ -149,57 +151,51 @@ overlayScrim = 0.45,
     }
 
     /*
-     * --------------------------------------------------
-     * TITLE
-     * --------------------------------------------------
+     * LARGE TITLE
+     *
+     * The title fades away while the frame expands.
      */
 
-if (titleRef.current) {
-  // Title leaves smoothly as the image expands
-  const out = smoothstep(0.42, 0.68, p);
+    if (titleRef.current) {
+      const titleOut = smoothstep(0.4, 0.88, p);
 
-  titleRef.current.style.opacity = `${1 - out}`;
-  titleRef.current.style.transform =
-    `translate3d(0, ${-20 * out}px, 0) scale(${1 + 0.04 * out})`;
-}
+      titleRef.current.style.opacity =
+        `${1 - titleOut}`;
 
-if (overlayRef.current) {
-  // Thought begins almost immediately as the title disappears
-  const inn = smoothstep(0.60, 0.78, p);
-
-  overlayRef.current.style.opacity = `${inn}`;
-  overlayRef.current.style.transform =
-    `translate3d(0, ${12 * (1 - inn)}px, 0)`;
-}
-    /*
-     * --------------------------------------------------
-     * SCROLL HINT
-     * --------------------------------------------------
-     */
-
-    if (hintRef.current) {
-      const gone = smoothstep(0, 0.15, p);
-
-      hintRef.current.style.opacity =
-        `${1 - gone}`;
-
-      hintRef.current.style.transform =
-        `translate3d(0, ${8 * gone}px, 0)`;
+      titleRef.current.style.transform =
+        `translate3d(0, ${-28 * titleOut}px, 0) scale(${1 + 0.06 * titleOut})`;
     }
 
     /*
-     * --------------------------------------------------
-     * PHILOSOPHY CONTENT
+     * PHILOSOPHY THOUGHT
      *
-     * This is the important change.
-     *
-     * It appears AFTER the frame is mostly expanded
-     * and stays fully visible until the scroll track
-     * finishes.
-     * --------------------------------------------------
+     * Starts appearing as the title is leaving.
+     * This keeps the transition visually connected.
      */
 
-  
+    if (overlayRef.current) {
+      const thoughtIn = smoothstep(0.68, 1, p);
+
+      overlayRef.current.style.opacity =
+        `${thoughtIn}`;
+
+      overlayRef.current.style.transform =
+        `translate3d(0, ${18 * (1 - thoughtIn)}px, 0)`;
+    }
+
+    /*
+     * SCROLL HINT
+     */
+
+    if (hintRef.current) {
+      const hintOut = smoothstep(0, 0.15, p);
+
+      hintRef.current.style.opacity =
+        `${1 - hintOut}`;
+
+      hintRef.current.style.transform =
+        `translate3d(0, ${8 * hintOut}px, 0)`;
+    }
   }, []);
 
   useEffect(() => {
@@ -209,63 +205,51 @@ if (overlayRef.current) {
 
     if (!root || !track || !stage) return;
 
-    const reduceMotion =
-      window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
     let raf = 0;
     let current = 0;
     let target = 0;
-    let stageH = 0;
+    let stageHeight = 0;
     let running = false;
 
     /*
-     * --------------------------------------------------
      * MEASURE
-     * --------------------------------------------------
      */
 
     const measure = () => {
       const c = propsRef.current;
 
-      stageH =
-        c.useWindowScroll
-          ? window.innerHeight
-          : root.clientHeight;
+      stageHeight = c.useWindowScroll
+        ? window.innerHeight
+        : root.clientHeight;
 
-      if (stageH <= 0) return;
+      if (stageHeight <= 0) return;
 
       stage.style.height =
-        `${stageH}px`;
+        `${stageHeight}px`;
 
-      /*
-       * Expansion distance + HOLD distance.
-       *
-       * The hold is deliberately long on mobile.
-       */
-
-      const total =
+      const totalHeight =
         1 +
         Math.max(0, c.scrollDistance) +
         Math.max(0, c.holdDistance);
 
       track.style.height =
-        `${stageH * total}px`;
+        `${stageHeight * totalHeight}px`;
 
-      const w =
-        root.clientWidth || stageH;
+      const width =
+        root.clientWidth || stageHeight;
 
       stage.style.setProperty(
         "--se-title-size",
-        `${clamp(w * 0.075, 20, 84)}px`
+        `${clamp(width * 0.075, 48, 84)}px`
       );
     };
 
     /*
-     * --------------------------------------------------
-     * PROGRESS
-     * --------------------------------------------------
+     * READ SCROLL PROGRESS
      */
 
     const readProgress = () => {
@@ -273,20 +257,9 @@ if (overlayRef.current) {
 
       if (!c.enabled) return 1;
 
-      /*
-       * Only the expansion distance controls
-       * animation progress.
-       *
-       * The hold distance does NOT push the
-       * animation backwards or fade it away.
-       */
-
       const span =
-        stageH *
-        Math.max(
-          0.01,
-          c.scrollDistance
-        );
+        stageHeight *
+        Math.max(0.01, c.scrollDistance);
 
       if (c.useWindowScroll) {
         const top =
@@ -307,25 +280,23 @@ if (overlayRef.current) {
     };
 
     /*
-     * --------------------------------------------------
-     * RAF SMOOTHING
-     * --------------------------------------------------
+     * SMOOTH ANIMATION
      */
 
     const tick = () => {
       const c = propsRef.current;
 
-      const k =
+      const smoothingFactor =
         c.smoothing <= 0
           ? 1
           : 1 -
             Math.exp(
-              -1 /
-                (60 * c.smoothing)
+              -1 / (60 * c.smoothing)
             );
 
       current +=
-        (target - current) * k;
+        (target - current) *
+        smoothingFactor;
 
       if (
         Math.abs(target - current) <
@@ -337,9 +308,12 @@ if (overlayRef.current) {
 
       applyProgress(current);
 
-      raf = running
-        ? requestAnimationFrame(tick)
-        : 0;
+      if (running) {
+        raf =
+          requestAnimationFrame(tick);
+      } else {
+        raf = 0;
+      }
     };
 
     const kick = () => {
@@ -354,9 +328,7 @@ if (overlayRef.current) {
     };
 
     /*
-     * --------------------------------------------------
-     * SCROLL
-     * --------------------------------------------------
+     * SCROLL HANDLER
      */
 
     const onScroll = () => {
@@ -375,9 +347,7 @@ if (overlayRef.current) {
     };
 
     /*
-     * --------------------------------------------------
-     * RESIZE
-     * --------------------------------------------------
+     * RESIZE HANDLER
      */
 
     const onResize = () => {
@@ -389,6 +359,10 @@ if (overlayRef.current) {
       applyProgress(current);
     };
 
+    /*
+     * INITIAL STATE
+     */
+
     measure();
 
     target = readProgress();
@@ -396,10 +370,13 @@ if (overlayRef.current) {
 
     applyProgress(current);
 
-    const scroller =
-      useWindowScroll
-        ? window
-        : root;
+    /*
+     * EVENT LISTENERS
+     */
+
+    const scroller = useWindowScroll
+      ? window
+      : root;
 
     scroller.addEventListener(
       "scroll",
@@ -412,10 +389,14 @@ if (overlayRef.current) {
       onResize
     );
 
-    const ro =
+    const resizeObserver =
       new ResizeObserver(onResize);
 
-    ro.observe(root);
+    resizeObserver.observe(root);
+
+    /*
+     * CLEANUP
+     */
 
     return () => {
       if (raf) {
@@ -432,7 +413,7 @@ if (overlayRef.current) {
         onResize
       );
 
-      ro.disconnect();
+      resizeObserver.disconnect();
     };
   }, [
     applyProgress,
@@ -440,47 +421,37 @@ if (overlayRef.current) {
   ]);
 
   /*
-   * --------------------------------------------------
    * MEDIA
-   * --------------------------------------------------
    */
 
   const media =
     mediaType === "video" ? (
       <video
-        ref={
-          mediaRef as React.RefObject<HTMLVideoElement>
-        }
+        ref={mediaRef as React.RefObject<HTMLVideoElement>}
         src={src}
         poster={poster}
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="scroll-expand__media"
       />
     ) : src ? (
       <img
-        ref={
-          mediaRef as React.RefObject<HTMLImageElement>
-        }
+        ref={mediaRef as React.RefObject<HTMLImageElement>}
         src={src}
         alt={alt}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="scroll-expand__media"
       />
     ) : (
       <div
-        ref={
-          mediaRef as React.RefObject<HTMLDivElement>
-        }
-        className="absolute inset-0 bg-black"
+        className="scroll-expand__media"
+        aria-hidden="true"
       />
     );
 
   /*
-   * --------------------------------------------------
    * RENDER
-   * --------------------------------------------------
    */
 
   return (
@@ -505,49 +476,46 @@ if (overlayRef.current) {
           className="scroll-expand__stage"
         >
           <div
-            ref={frameRef}
-            className="scroll-expand__frame z-10"
-          >
-            {media}
+  ref={frameRef}
+  className="scroll-expand__frame"
+>
+  {media}
 
-            <div
-              ref={scrimRef}
-              className="absolute inset-0 bg-black pointer-events-none"
-              style={{
-                opacity: 0,
-              }}
-            />
+  <div
+    ref={scrimRef}
+    className="scroll-expand__scrim"
+  />
+</div>
 
-            {children ? (
-              <div
-                ref={overlayRef}
-                className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
-                style={{
-                  opacity: 0,
-                }}
-              >
-                {children}
-              </div>
-            ) : null}
-
+{/* TITLE — intentionally OUTSIDE the clipped frame */}
 {title ? (
   <div
     ref={titleRef}
-    className="scroll-expand__title absolute inset-0 z-30 flex items-center justify-center pointer-events-none"
+    className="scroll-expand__title"
   >
     {title}
   </div>
 ) : null}
 
-            {scrollHint ? (
-              <div
-                ref={hintRef}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-40"
-              >
-                {scrollHint}
-              </div>
-            ) : null}
-          </div>
+{/* THOUGHT — also outside the clipped frame */}
+{children ? (
+  <div
+    ref={overlayRef}
+    className="scroll-expand__overlay"
+  >
+    {children}
+  </div>
+) : null}
+
+{/* SCROLL HINT */}
+{scrollHint ? (
+  <div
+    ref={hintRef}
+    className="scroll-expand__hint"
+  >
+    {scrollHint}
+  </div>
+) : null}
         </div>
       </div>
     </div>
