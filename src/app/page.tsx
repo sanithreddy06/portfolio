@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import MobileMenu from "@/components/MobileMenu";
+import { useState, useCallback, useEffect } from "react"; 
 import SmoothScroll from "@/lib/smooth-scroll";
 import LoadingScreen from "@/components/LoadingScreen";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -13,6 +14,11 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+  if (window.innerWidth < 768) {
+    setIsLoading(false);
+  }
+}, []);
 
   const handleLoadingComplete = useCallback(() => {
     setIsLoading(false);
@@ -30,35 +36,37 @@ export default function Home() {
       <div className="noise-overlay" aria-hidden="true" />
 
       {/* Navigation — StaggeredMenu stacked on left side */}
-      {!isLoading && (
-        <StaggeredMenu
-          position="left"
-          items={[
-            { label: "Projects", ariaLabel: "Go to Projects section", link: "#projects" },
-            { label: "Experience", ariaLabel: "Go to Experience section", link: "#experience" },
-            { label: "Contact", ariaLabel: "Go to Contact section", link: "#contact" },
-          ]}
-          socialItems={[
-            { label: "GitHub", link: "https://github.com/sanithreddy06" },
-            { label: "LinkedIn", link: "https://www.linkedin.com/in/mudiyalasaisanithreddy/" },
-            { label: "Twitter", link: "https://x.com/sanithreddy2006" },
-            { label: "Instagram", link: "https://www.instagram.com/saisanithreddy/" },
-          ]}
-          displaySocials={true}
-          displayItemNumbering={true}
-          colors={["#0d0d0f", "#1e1e24"]}
-          accentColor="#A02A22"
-          menuButtonColor="#ffffff"
-          openMenuButtonColor="#A02A22"
-        />
-      )}
+    {!isLoading && (
+      <div className="hidden md:block">
+      <StaggeredMenu
+      position="left"
+      items={[
+        { label: "Projects", ariaLabel: "Go to Projects section", link: "#projects" },
+        { label: "Experience", ariaLabel: "Go to Experience section", link: "#experience" },
+        { label: "Contact", ariaLabel: "Go to Contact section", link: "#contact" },
+      ]}
+      socialItems={[
+        { label: "GitHub", link: "https://github.com/sanithreddy06" },
+        { label: "LinkedIn", link: "https://www.linkedin.com/in/mudiyalasaisanithreddy/" },
+        { label: "Twitter", link: "https://x.com/sanithreddy2006" },
+        { label: "Instagram", link: "https://www.instagram.com/saisanithreddy/" },
+      ]}
+      displaySocials={true}
+      displayItemNumbering={true}
+      colors={["#0d0d0f", "#1e1e24"]}
+      accentColor="#A02A22"
+      menuButtonColor="#ffffff"
+      openMenuButtonColor="#A02A22"
+    />
+    </div>
+    )}
 
       {/* Main content */}
       <SmoothScroll>
         <main>
           {/* Hero — cinematic editorial section */}
           <Hero />
-
+          <MobileMenu />
           <Introduction />
           <Projects />
           <Experience />

@@ -72,20 +72,29 @@
 .scroll-expand__title {
   position: absolute;
   inset: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin: 0;
   padding: 0 6%;
+
   text-align: center;
-  font-size: var(--se-title-size);
-  font-family: var(--font-josefin), 'Josefin Sans', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  line-height: 1;
-  color: #fff;
-  text-shadow: 0 2px 32px rgba(160, 42, 34, 0.5), 0 4px 48px rgba(0, 0, 0, 0.6);
+
+  font-family: var(--font-josefin), "Josefin Sans", sans-serif !important;
+  font-size: clamp(48px, 7.5vw, 84px) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+
+  color: #fff !important;
+
+  text-shadow:
+    0 2px 32px rgba(160, 42, 34, 0.5),
+    0 4px 48px rgba(0, 0, 0, 0.6);
+
   pointer-events: none;
   will-change: opacity, transform;
 }
@@ -103,4 +112,41 @@
   color: rgba(255, 255, 255, 0.45);
   pointer-events: none;
   will-change: opacity, transform;
+}
+
+/* =========================================
+   MOBILE PHILOSOPHY
+   ========================================= */
+
+@media (max-width: 767px) {
+  .scroll-expand {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+  }
+
+  .scroll-expand__track {
+    width: 100%;
+  }
+
+  .scroll-expand__stage {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    top: 0;
+    overflow: hidden;
+  }
+
+  .scroll-expand__frame {
+    width: 100%;
+    height: 100%;
+    will-change: clip-path;
+  }
+
+  .scroll-expand__overlay {
+    padding: 24px;
+    width: 100%;
+    height: 100%;
+  }
 }

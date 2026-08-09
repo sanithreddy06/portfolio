@@ -205,10 +205,126 @@ export default function Hero() {
      RENDER
      ────────────────────────────────────────────── */
   return (
+    <>
+    {/* ──────────────────────────────────────────────
+    MOBILE HERO
+    ────────────────────────────────────────────── */}
+<div className="md:hidden relative min-h-screen bg-[#111111] overflow-hidden flex flex-col">
+  
+  {/* Ambient orange glow */}
+  <div
+    className="absolute top-[18%] left-1/2 -translate-x-1/2
+               w-[320px] h-[320px] rounded-full
+               pointer-events-none"
+    style={{
+      background:
+        "radial-gradient(circle, rgba(252,107,47,0.16) 0%, transparent 70%)",
+      filter: "blur(45px)",
+    }}
+  />
+
+  {/* Subtle grain */}
+  <div
+    className="absolute inset-0 pointer-events-none opacity-[0.035]"
+    style={{
+      backgroundImage:
+        `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+      backgroundSize: "256px",
+    }}
+  />
+
+  {/* Mobile content */}
+  <div className="relative z-10 flex flex-1 flex-col px-6 pt-28 pb-10">
+
+    {/* Top statement */}
+    <div className="mobile-hero-fade flex items-center gap-2">
+      <span className="w-2 h-2 rounded-full bg-ember animate-pulse" />
+      <span
+        className="text-[10px] tracking-[0.22em] uppercase text-[#B5B5B5]"
+        style={{ fontFamily: "var(--font-display)" }}
+      >
+        Shipping Ideas Into Reality.
+      </span>
+    </div>
+
+    {/* Main identity */}
+    <div className="flex flex-1 flex-col justify-center">
+
+      <p
+        className="mobile-hero-fade text-[11px] uppercase
+                   tracking-[0.3em] text-ember mb-5"
+        style={{ fontFamily: "var(--font-poppins), sans-serif" }}
+      >
+        Computer Science Engineer
+      </p>
+
+      <h1
+        className="mobile-hero-fade text-[clamp(4rem,19vw,7rem)]
+                   font-black leading-[0.82] tracking-[-0.06em]
+                   text-white"
+        style={{ fontFamily: "var(--font-poppins), sans-serif" }}
+      >
+        SAI
+        <br />
+        SANITH
+      </h1>
+
+      <p
+        className="mobile-hero-fade mt-7 max-w-[330px]
+                   text-[15px] leading-[1.7] text-[#B5B5B5]"
+        style={{ fontFamily: "var(--font-poppins), sans-serif" }}
+      >
+        Building AI, IoT, and software projects that turn ideas
+        into real-world solutions.
+      </p>
+
+    </div>
+
+    {/* Mobile buttons */}
+    <div className="mobile-hero-fade flex flex-col gap-3">
+
+      <a
+        href="#projects"
+        className="w-full rounded-full bg-ember
+                   px-6 py-4 text-center text-sm
+                   font-semibold text-white
+                   shadow-[0_0_30px_rgba(160,42,34,0.35)]"
+      >
+        Explore Work →
+      </a>
+
+      <a
+        href="#contact"
+        className="w-full rounded-full border border-white/15
+                   px-6 py-4 text-center text-sm
+                   font-medium text-white"
+      >
+        Let&apos;s Talk →
+      </a>
+
+    </div>
+
+    {/* Scroll indicator */}
+    <div className="mobile-hero-fade flex justify-center pt-8">
+      <div className="flex flex-col items-center gap-2">
+        <span
+          className="text-[9px] tracking-[0.35em] uppercase
+                     text-white/35"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          Scroll
+        </span>
+
+        <div className="h-8 w-px bg-gradient-to-b from-white/30 to-transparent" />
+      </div>
+    </div>
+
+  </div>
+</div>
     <section
       ref={sectionRef}
       id="hero"
-      className="relative h-screen overflow-hidden"
+      className="hidden md:block relative h-screen overflow-hidden"
       style={{ background: "#111111" }}
     >
       {/* ── React Bits Ghost Cursor Effect (Vibrant Orange Secondary Accent Glow) ── */}
@@ -379,7 +495,7 @@ export default function Hero() {
           />
         </div>
 
-        {/* Small footer text at the base of upper-centered JISHNU */}
+        {/* Small footer text at the base of upper-centered SANITH */}
         <div ref={headlineRef} className="mt-3 md:mt-4 text-center z-[20]">
           <p
             className="hero-line text-[clamp(0.72rem,1.08vw,0.88rem)] font-extrabold tracking-[0.25em] uppercase text-ember drop-shadow-[0_0_20px_rgba(252,107,47,0.7)]"
@@ -419,5 +535,6 @@ export default function Hero() {
         }}
       />
     </section>
+    </>
   );
 }
