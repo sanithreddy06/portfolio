@@ -59,6 +59,12 @@ http.createServer(async (req, res) => {
       return;
     }
 
+    // Vercel analytics scripts only exist on Vercel: answer locally with an empty script
+    if (url.pathname.startsWith("/_vercel/")) {
+      res.setHeader("Content-Type", "text/javascript");
+      return res.end("");
+    }
+
     let file = decodeURIComponent(url.pathname);
     if (BLOCKED.test(file)) { res.statusCode = 404; return res.end("Not found"); }
     if (file.endsWith("/")) file += "index.html";
