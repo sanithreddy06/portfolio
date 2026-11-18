@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Sanith Reddy — Computer Science Engineer</title>
+  <meta name="description" content="Sai Sanith Reddy — Computer Science Engineer building AI, IoT and software projects that turn ideas into real-world solutions." />
+  <meta name="theme-color" content="#f7f5ff" />
+  <meta property="og:title" content="Sai Sanith Reddy — Shipping Ideas Into Reality" />
+  <meta property="og:description" content="Building AI, IoT, and software projects that turn ideas into real-world solutions." />
+  <meta property="og:url" content="https://saisanith.in" />
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/logo/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png" />
+  <meta property="og:image" content="https://saisanith.in/assets/logo/sanith-avatar-gradient.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- animated colour background -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- ========== NAV ========== -->
+  <header class="nav">
+    <a href="#top" class="logo" aria-label="Sai Sanith Reddy — back to top"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" xmlns:c2pa="http://c2pa.org/manifest"><defs><linearGradient id="lgNav" gradientUnits="userSpaceOnUse" x1="14" y1="14" x2="106" y2="106"><stop offset="0" stop-color="#7c3aed"></stop><stop offset=".55" stop-color="#ec4899"></stop><stop offset="1" stop-color="#f97316"></stop></linearGradient></defs><path d="M89 24H44Q28 24 28 40V44Q28 60 44 60H76Q92 60 92 76V80Q92 96 76 96H35" fill="none" stroke="url(#lgNav)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="96" cy="24" r="8" fill="#ffffff" stroke="url(#lgNav)" stroke-width="6"></circle><circle cx="27" cy="96" r="9" fill="#f97316"></circle><circle cx="60" cy="60" r="3.5" fill="#ffffff"></circle><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTozY2U2OGM2My04YTAxLTRiYmEtYWFkOC0yNmY4NmE0MjZiMjAAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaGdaeGGNqLBSgW69yho7/6oAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoyZjcxNGRjZC1jNGE1LTQ5MzYtODQ2Ni1hZGUxZTdmZDVlNzFscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoqJbPDOe6qFirrjhtuVQ1ogAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggkvYNRpPsjfWVInOl9KyzcDUfucZi6h+vZUK9FVKs24KkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaNgoRxNXaFPleFxu2sfvIOIAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIKTKKOhkBeYXtnl+w/hSDS0vByXjwY7aJFuO2EiwuX2MZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GQMoZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjNjZTY4YzYzLThhMDEtNGJiYS1hYWQ4LTI2Zjg2YTQyNmIyMC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjQ1NWQ2Y2ZmLWMxMGItNDhlZC04OTE0LTRjMTBlODQ2MTkxY3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCS9g1Gk+yN9ZUic6X0rLNwNR+5xmLqH69lQr0VUqzbgqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggyXnCh7QZ3oKD/jFnwJPfDdKK72Ibj+Z7qG4O7U1w2EGiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgghNso1TtwtSNYemnTH40myCwEMjA3+y9NLpEf7PAR9rB0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQACpbZopWoVPMtBjKnpD3z3e9gHD8+Nih3SKHBh96cKdMfwWLgQUYGsvGCjsRuebjgurMGLoKvS9qN2hxlyyJaQ=</c2pa:manifest></metadata></svg><b>sanith<span>.</span></b></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#about"><i>01</i>About</a>
+      <a href="#stack"><i>02</i>Stack</a>
+      <a href="#projects"><i>03</i>Projects</a>
+      <a href="#lab"><i>04</i>Live Lab</a>
+      <a href="#journey"><i>05</i>Journey</a>
+      <a href="#hackathons"><i>06</i>Hackathons</a>
+      <a href="#contact"><i>07</i>Contact</a>
+    </nav>
+    <a href="assets/Resume_Sanith.pdf" class="resume-link mono" target="_blank" rel="noopener">Résumé ↓</a>
+    <a href="#contact" class="status-pill"><span class="dot"></span>Open to opportunities</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main>
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="top">
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <p class="mono kicker"><span class="blink">▍</span>// b.tech_cse · reva_university · bengaluru, IN</p>
+      <h1 class="hero-title">
+        <span class="line">SAI</span>
+        <span class="line outline">SANITH<span class="lime">.</span></span>
+      </h1>
+      <div class="hero-bottom">
+        <div>
+          <p class="tagline">Shipping ideas <em>into reality.</em></p>
+          <p class="hero-bio">Building AI, IoT, and software projects that turn ideas into real-world solutions.</p>
+        </div>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-lime">Explore Work <span>→</span></a>
+          <a href="#contact" class="btn btn-ghost">Let's Talk <span>→</span></a>
+          <a href="assets/Resume_Sanith.pdf" class="btn btn-ghost" download>Résumé <span>↓</span></a>
+        </div>
+      </div>
+      <div class="readout mono">
+        <div><span>PROJECTS</span><b>05</b></div>
+        <div><span>BUILDING SINCE</span><b>2023</b></div>
+        <div><span>DOMAINS</span><b>AI · IoT · WEB</b></div>
+        <div class="scroll-cue"><span>SCROLL</span><b class="arrow">↓</b></div>
+      </div>
+    </div>
+    <p class="mono hint" aria-hidden="true">move your cursor ↗</p>
+    <div class="float-card fc1 glass" aria-hidden="true">
+      <span class="fc-icon">⚡</span>
+      <div><b>AI · IoT · Web</b><span class="mono">builder mode on</span></div>
+    </div>
+    <div class="float-card fc2 glass" aria-hidden="true">
+      <span class="dot"></span>
+      <div><b>Open to work</b><span class="mono">AI/ML internships</span></div>
+    </div>
+    <div class="float-card fc3 glass mono" aria-hidden="true">
+      <span class="k">const</span> sanith = {<br />&nbsp;&nbsp;base: <span class="s">"Bengaluru"</span>,<br />&nbsp;&nbsp;ships: <span class="n">true</span><br />}
+    </div>
+  </section>
+
+  <!-- ========== MARQUEE ========== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track mono">
+      <span>PYTHON</span><b>✦</b><span>REACT</span><b>✦</b><span>NODE.JS</span><b>✦</b><span>ARDUINO</span><b>✦</b><span>MACHINE LEARNING</span><b>✦</b><span>COMPUTER VISION</span><b>✦</b><span>IoT</span><b>✦</b><span>SENSORS</span><b>✦</b><span>GITHUB API</span><b>✦</b><span>SQL</span><b>✦</b><span>RASPBERRY PI</span><b>✦</b><span>ESP32</span><b>✦</b><span>FLIPPER ZERO</span><b>✦</b><span>LILYGO</span><b>✦</b><span>SUPABASE</span><b>✦</b>
+      <span>PYTHON</span><b>✦</b><span>REACT</span><b>✦</b><span>NODE.JS</span><b>✦</b><span>ARDUINO</span><b>✦</b><span>MACHINE LEARNING</span><b>✦</b><span>COMPUTER VISION</span><b>✦</b><span>IoT</span><b>✦</b><span>SENSORS</span><b>✦</b><span>GITHUB API</span><b>✦</b><span>SQL</span><b>✦</b><span>RASPBERRY PI</span><b>✦</b><span>ESP32</span><b>✦</b><span>FLIPPER ZERO</span><b>✦</b><span>LILYGO</span><b>✦</b><span>SUPABASE</span><b>✦</b>
+    </div>
+  </div>
+
+    <!-- ========== 01 ABOUT ========== -->
+    <section class="section" id="about">
+      <div class="sec-head reveal">
+        <span class="reg mono">0x01</span>
+        <h2>About</h2>
+        <span class="sec-line"></span>
+      </div>
+      <blockquote class="manifesto reveal">
+        I believe technology becomes <em>meaningful</em> when ideas are turned into something <span class="hl">real.</span>
+      </blockquote>
+      <p class="about-text reveal">
+        I'm a Computer Science Engineering student at <strong>REVA University</strong> who builds across <em>software</em>, <em>AI</em> and <em>IoT</em> — from tools that make sense of codebases to sensors that know when a parking spot is free. I care about work that solves problems and makes technology more useful — and I'm especially curious about <em>Generative AI</em> and how models actually work.
+      </p>
+      <div class="principles">
+        <article class="principle reveal">
+          <span class="mono idx">[01]</span>
+          <h3>Build it real</h3>
+          <p>Ideas only count once they run. I prototype early and ship working things.</p>
+        </article>
+        <article class="principle reveal">
+          <span class="mono idx">[02]</span>
+          <h3>Solve a problem</h3>
+          <p>Every project starts from a real need — waste sorting, parking, pricing, code understanding.</p>
+        </article>
+        <article class="principle reveal">
+          <span class="mono idx">[03]</span>
+          <h3>Software meets hardware</h3>
+          <p>I like the space where code, models and sensors meet the physical world.</p>
+        </article>
+      </div>
+      <div class="facts mono reveal">
+        <div><span>SPEAKS</span><b>English · Telugu · Kannada · Hindi</b></div>
+        <div><span>INTO</span><b>AI/ML · IoT systems · Developer tools</b></div>
+        <div><span>OFF-SCREEN</span><b>Cricket 🏏</b></div>
+      </div>
+    </section>
+
+    <!-- ========== 02 STACK ========== -->
+    <section class="section" id="stack">
+      <div class="sec-head reveal">
+        <span class="reg mono">0x02</span>
+        <h2>Stack</h2>
+        <span class="sec-line"></span>
+      </div>
+      <div class="boards">
+        <div class="board reveal">
+          <div class="board-top mono"><span>MODULE_A</span><span class="led on"></span></div>
+          <h3>Languages</h3>
+          <ul class="chips"><li>Python</li><li>SQL</li><li>Java</li><li>C</li></ul>
+        </div>
+        <div class="board reveal">
+          <div class="board-top mono"><span>MODULE_B</span><span class="led on"></span></div>
+          <h3>AI &amp; ML</h3>
+          <ul class="chips"><li>Machine Learning</li><li>Regression</li><li>Computer Vision</li><li>Image Classification</li><li>AI Apps</li></ul>
+        </div>
+        <div class="board reveal">
+          <div class="board-top mono"><span>MODULE_C</span><span class="led on"></span></div>
+          <h3>Web &amp; Data</h3>
+          <ul class="chips"><li>React</li><li>Node.js</li><li>HTML</li><li>CSS</li><li>Supabase</li><li>MySQL</li><li>GitHub API</li></ul>
+        </div>
+        <div class="board reveal">
+          <div class="board-top mono"><span>MODULE_D</span><span class="led on"></span></div>
+          <h3>IoT &amp; Tools</h3>
+          <ul class="chips"><li>Arduino</li><li>Raspberry Pi</li><li>ESP32</li><li>LILYGO</li><li>Flipper Zero</li><li>Sensors</li><li>Git</li><li>VS Code</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 03 PROJECTS ========== -->
+    <section class="section" id="projects">
+      <div class="sec-head reveal">
+        <span class="reg mono">0x03</span>
+        <h2>Projects</h2>
+        <span class="sec-line"></span>
+        <span class="mono count">05 builds</span>
+      </div>
+      <div class="project-list" id="projectList"><!-- rendered by script.js --></div>
+    </section>
+
+    <!-- ========== 04 LIVE LAB ========== -->
+    <section class="section" id="lab">
+      <div class="sec-head reveal">
+        <span class="reg mono">0x04</span>
+        <h2>Live Lab</h2>
+        <span class="sec-line"></span>
+      </div>
+      <p class="lab-intro reveal">A browser version of my <strong>Smart Parking System</strong>. Each bay has a simulated ultrasonic sensor; if it reads under <span class="mono lime">30&nbsp;cm</span>, the bay is taken. <em>Click a bay to park or remove a car</em>, or switch on auto traffic.</p>
+
+      <div class="lab reveal">
+        <div class="lot-wrap">
+          <div class="lot-top mono">
+            <span>LOT_A · ARDUINO UNO · HC-SR04 ×12</span>
+            <label class="toggle"><input type="checkbox" id="autoTraffic" /><span class="track"><span class="knob"></span></span>AUTO TRAFFIC</label>
+          </div>
+          <div class="lot" id="lot"><!-- bays rendered by script.js --></div>
+          <div class="lane mono">← ENTRY ─────────────── DRIVE LANE ─────────────── EXIT →</div>
+        </div>
+        <aside class="lab-side">
+          <div class="avail">
+            <span class="mono label">BAYS FREE</span>
+            <div class="avail-num"><b id="freeCount">12</b><span>/12</span></div>
+            <div class="avail-bar"><span id="freeBar"></span></div>
+            <div class="gate mono"><span class="led" id="gateLed"></span><span id="gateText">GATE OPEN</span></div>
+          </div>
+          <div class="serial">
+            <div class="serial-top mono"><span>SERIAL MONITOR</span><span>9600 baud</span></div>
+            <pre class="mono" id="serial"></pre>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ========== 05 JOURNEY ========== -->
+    <section class="section" id="journey">
+      <div class="sec-head reveal">
+        <span class="reg mono">0x05</span>
+        <h2>Journey</h2>
+        <span class="sec-line"></span>
+      </div>
+      <ol class="timeline">
+        <li class="t-item reveal">
+          <span class="t-year mono">2024 — NOW</span>
+          <div class="t-body">
+            <span class="mono t-tag">EXPERIENCE</span>
+            <h3>Developer &amp; Builder</h3>
+            <p class="t-org">Personal Projects</p>
+            <p>Building practical software and tech projects. Highlights include CodeLens, the Smart Parking System, a Personal Control Center dashboard, and work in ML, computer vision, web development and AI.</p>
+          </div>
+        </li>
+        <li class="t-item reveal">
+          <span class="t-year mono">2023 — 2027</span>
+          <div class="t-body">
+            <span class="mono t-tag">EDUCATION</span>
+            <h3>B.Tech, Computer Science</h3>
+            <p class="t-org">REVA University, Bengaluru</p>
+            <p>Final-year CS student with hands-on Python experience in machine learning and computer vision, exploring software, AI, IoT and emerging tech.</p>
+          </div>
+        </li>
+        <li class="t-item reveal">
+          <span class="t-year mono">2023</span>
+          <div class="t-body">
+            <span class="mono t-tag">EDUCATION</span>
+            <h3>Pre-University (PUC), State Board</h3>
+            <p class="t-org">SJ PU College, Bengaluru</p>
+          </div>
+        </li>
+        <li class="t-item reveal">
+          <span class="t-year mono">2021</span>
+          <div class="t-body">
+            <span class="mono t-tag">EDUCATION</span>
+            <h3>Class 10, CBSE</h3>
+            <p class="t-org">Sri Chaitanya Techno School, Bengaluru</p>
+          </div>
+        </li>
+      </ol>
+      <div class="certs reveal">
+        <span class="mono t-tag">CERTIFICATIONS</span>
+        <ul>
+          <li><b>Introduction to Cloud Computing</b><span class="mono">2026</span></li>
+          <li><b>Computer Networking</b><span class="mono">2025</span></li>
+        </ul>
+        <a href="assets/Resume_Sanith.pdf" class="btn btn-lime" download>Download résumé <span>↓</span></a>
+      </div>
+    </section>
+
+    <!-- ========== 06 HACKATHONS ========== -->
+    <section class="section" id="hackathons">
+      <div class="sec-head reveal">
+        <span class="reg mono">0x06</span>
+        <h2>Hackathons</h2>
+        <span class="sec-line"></span>
+      </div>
+      <div class="hack-grid" id="hackGrid"><!-- rendered by script.js --></div>
+    </section>
+
+    <!-- ========== 07 CONTACT ========== -->
+    <section class="section contact" id="contact">
+      <div class="sec-head reveal">
+        <span class="reg mono">0x07</span>
+        <h2>Contact</h2>
+        <span class="sec-line"></span>
+      </div>
+      <h2 class="contact-title reveal">LET'S BUILD<br /><span class="outline">SOMETHING</span><span class="lime">.</span></h2>
+      <p class="contact-sub reveal">Have an idea, an internship or a collaboration in mind? I'm open to opportunities — drop a message.</p>
+
+      <div class="contact-grid">
+        <!-- Contact card -->
+        <div class="id-card reveal">
+          <div class="id-top mono">
+            <span>SSR · ID-2023</span>
+            <span class="status"><span class="dot"></span>AVAILABLE</span>
+          </div>
+          <div class="id-main">
+            <div class="id-avatar"><svg aria-hidden="true" width="46" height="46" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" xmlns:c2pa="http://c2pa.org/manifest"><defs><linearGradient id="lgCard" gradientUnits="userSpaceOnUse" x1="14" y1="14" x2="106" y2="106"><stop offset="0" stop-color="#7c3aed"></stop><stop offset=".55" stop-color="#ec4899"></stop><stop offset="1" stop-color="#f97316"></stop></linearGradient></defs><path d="M89 24H44Q28 24 28 40V44Q28 60 44 60H76Q92 60 92 76V80Q92 96 76 96H35" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="96" cy="24" r="8" fill="#ffffff" stroke="#ffffff" stroke-width="6"></circle><circle cx="27" cy="96" r="9" fill="#ffffff"></circle><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo1ZTg5ZjI4My00NGQ3LTQ0OWEtYmY2ZS03NTMwZWY3MDNhOTIAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaAi7KWtvtXREIi/iwv0sDMEAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo3MGYyYTNlYi1kZTUzLTRkNjktODkxMS0yNWQ2MGZkYmNiYzVscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoljanHu3tzSWYvnYZ6mzBvwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggfgtT81Ss+ZOroOBdbcwHgbGXHk4vORY0rPjGzNtkXm+kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaICxznfX1o8S3wdgTlBg9ioAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIK3UIoBvqadJeEmolsQzFdOXJHnotc3Bc9TOOZeZXt8UZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GQLuZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjVlODlmMjgzLTQ0ZDctNDQ5YS1iZjZlLTc1MzBlZjcwM2E5Mi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjM0YjdmZTBjLWM2ODItNDhiNC04N2Y4LTNjNzFhMmU1MGNhZXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCB+C1PzVKz5k6ug4F1tzAeBsZceTi85FjSs+MbM22Reb6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggSR+g88spY+pJMmGYvf6iYT9Ccb1GDSwJ1HDBYyeXNwWiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggiXV6q6tzJJYWhK0epjKDX3WqMHhAJ+l1sFuZEoYuIeJ0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQAf00p5O9A7QAplHz91Cdyt5wQrQCroF1eWsDlylROMM9DApLtc3Y40agjUQ17W5cNvUOjPXsLSZl6n2JT1Gm0I=</c2pa:manifest></metadata></svg></div>
+            <div>
+              <h3>Sai Sanith Reddy</h3>
+              <p class="mono dim">Computer Science Engineer</p>
+            </div>
+          </div>
+          <dl class="id-rows">
+            <div>
+              <dt class="mono">EMAIL</dt>
+              <dd>
+                <a href="mailto:mudiyalasanith2006@gmail.com">mudiyalasanith2006@gmail.com</a>
+                <button class="copy mono" data-copy="mudiyalasanith2006@gmail.com" aria-label="Copy email">COPY</button>
+              </dd>
+            </div>
+            <div><dt class="mono">BASE</dt><dd>Bengaluru, Karnataka, India</dd></div>
+            <div><dt class="mono">STATUS</dt><dd>Open to opportunities · AI/ML internships</dd></div>
+            <div><dt class="mono">RÉSUMÉ</dt><dd><a href="assets/Resume_Sanith.pdf" target="_blank" rel="noopener">Resume_Sanith.pdf ↗</a></dd></div>
+          </dl>
+          <div class="socials">
+            <a href="https://github.com/sanithreddy06" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/mudiyalasaisanithreddy/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://x.com/sanithreddy2006" target="_blank" rel="noopener" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.63 7.58H.48l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.5h2.04L6.48 3.24H4.3l13.31 17.4Z"/></svg>
+              <span>X</span>
+            </a>
+            <a href="https://www.instagram.com/saisanithreddy/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16ZM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.88 5.88 0 0 0-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88Z"/></svg>
+              <span>Instagram</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <form class="form reveal" id="contactForm" novalidate>
+          <!-- honeypot: hidden from people, bots fill it in -->
+          <div class="hp" aria-hidden="true">
+            <label>Leave this empty <input type="text" name="company" tabindex="-1" autocomplete="off" /></label>
+          </div>
+          <div class="form-top mono"><span>&gt; new_message.txt</span><span class="dim">all fields required</span></div>
+          <div class="form-body" id="formBody">
+            <label>
+              <span class="mono">NAME</span>
+              <input type="text" name="name" placeholder="Your name" maxlength="100" autocomplete="name" required />
+            </label>
+            <label>
+              <span class="mono">EMAIL</span>
+              <input type="email" name="email" placeholder="you@example.com" maxlength="200" autocomplete="email" required />
+            </label>
+            <label>
+              <span class="mono field-row">MESSAGE <em class="counter" id="msgCount">0 / 2000</em></span>
+              <textarea name="message" rows="5" placeholder="Tell me about your idea…" minlength="10" maxlength="2000" required></textarea>
+            </label>
+            <div class="send-row">
+              <button type="submit" class="btn btn-lime send-btn" id="sendBtn">
+                <span class="send-label">Send Message</span>
+                <svg class="btn-plane" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M2.5 11.2 21 3.5l-5.6 17.4-4.2-7.1-8.7-2.6Z" fill="currentColor"></path><path d="M11.2 13.8 21 3.5" stroke="rgba(0,0,0,.25)" stroke-width="1.2"></path></svg>
+              </button>
+              <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="form-success" id="formSuccess" hidden>
+            <div class="success-badge" aria-hidden="true">
+              <svg viewBox="0 0 52 52" width="64" height="64"><circle cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="3" class="ring"></circle><path d="M15 27l7 7 15-16" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="tick"></path></svg>
+            </div>
+            <h3>Message on its way!</h3>
+            <p>Thanks <b id="successName">there</b> — your note just took off. I'll reply to <b id="successEmail">your email</b> soon.</p>
+            <button type="button" class="btn btn-ghost" id="sendAnother">Send another message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="foot-big" aria-hidden="true">SANITH</div>
+    <div class="foot-row mono">
+      <span>© <span id="year">2026</span> Sai Sanith Reddy</span>
+      <span>Hand-wired in Bengaluru · no templates</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
